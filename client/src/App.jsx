@@ -14,6 +14,7 @@ import Community from './pages/Community'
 import { useAuth } from '@clerk/clerk-react'
 import { useEffect } from 'react'
 import {Toaster}from 'react-hot-toast'
+// import PresentationMaker from './pages/PresentationMaker'
 
 /*************  ✨ Windsurf Command ⭐  *************/
 /**
@@ -36,20 +37,38 @@ import {Toaster}from 'react-hot-toast'
   return (
     <div>
       <Toaster/>
-    <Routes>
+    {/* <Routes>
       <Route path="/" element={<Home />} />
        <Route path="/ai" element={<Layout />}>
-        <Route index element={<Dashboard/>}/>
+        <Route index element={<Dashboard/>}/> */}
         {/* <Route path="dashboard" element={<Dashboard />} /> */}
-        <Route path="blog-titles" element={<BlogTitles />} />
-        <Route path="write-article" element={<WriteArticle />} />
+        {/* <Route path="blog-titles" element={<BlogTitles />} /> */}
+        {/* <Route path="write-article" element={<WriteArticle />} />
         <Route path="review-resume" element={<ReviewResume />} />
         <Route path="remove-object" element={<RemoveObject />} />
         <Route path="remove-background" element={<RemoveBackground />} />
         <Route path="generate-images" element={<GenerateImages />} />
-        <Route path="community" element={<Community />} />
+    <Route path="community" element={<Community />} />
       </Route>
-    </Routes>
+    </Routes> */}
+
+<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/ai" element={<Layout />}>
+    {/* default route = Dashboard */}
+    <Route index element={<Dashboard />} />  
+
+    <Route path="dashboard" element={<Dashboard />} />
+    <Route path="write-article" element={<WriteArticle />} />
+    <Route path="review-resume" element={<ReviewResume />} />
+    <Route path="remove-object" element={<RemoveObject />} />
+    <Route path="remove-background" element={<RemoveBackground />} />
+    <Route path="generate-images" element={<GenerateImages />} />
+    <Route path="community" element={<Community />} />
+  </Route>
+</Routes>
+
+
     </div>
   )
 }

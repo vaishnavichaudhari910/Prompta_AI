@@ -5,6 +5,12 @@ import { v2 as cloudinary } from "cloudinary";
 import axios from "axios";
 import fs from "fs";
 import pdf from "pdf-parse/lib/pdf-parse.js";
+
+
+
+
+
+
 // import FormData from 'form-data';
 const AI = new OpenAI({
   apiKey: process.env.GEMINI_API_KEY,
@@ -323,3 +329,10 @@ export const resumeReview= async (req, res) => {
     res.json({ success: false, message: error.message });
   }
 };
+
+
+
+// new 
+
+
+

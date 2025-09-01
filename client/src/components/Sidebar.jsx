@@ -108,6 +108,7 @@ import {
   Scissors,
   SquarePen,
   Users,
+ 
 } from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -117,12 +118,13 @@ const navItems = [
  { to: "/ai/dashboard", label: "Dashboard", Icon: House },
 
   { to: "/ai/write-article", label: "Write Article", Icon: SquarePen },
-  { to: "/ai/blog-titles", label: "Blog Titles", Icon: Hash },
+//  { to: "/ai/blog-titles", label: "Blog Titles", Icon: Hash },
   { to: "/ai/generate-images", label: "Generate Images", Icon: Image },
   { to: "/ai/remove-background", label: "Remove Background", Icon: Eraser },
   { to: "/ai/remove-object", label: "Remove Object", Icon: Scissors },
   { to: "/ai/review-resume", label: "Review Resume", Icon: FileText },
   { to: "/ai/community", label: "Community", Icon: Users },
+  
 ];
 
 const Sidebar = ({ Sidebar, setSidebar }) => {
@@ -139,12 +141,29 @@ const Sidebar = ({ Sidebar, setSidebar }) => {
       transition-all duration-300 ease-in-out`}
     >
       <div className="my-7 w-full">
-        <img
+        {/* <img
           src={user.imageUrl}
           alt="User avatar"
           className="w-13 rounded-full mx-auto"
         />
-        <h1 className="mt-1 text-center">{user.fullName}</h1>
+        <h1 className="mt-1 text-center">{user.fullName}</h1> */}
+
+
+{/* User Card */}
+  <div className="flex items-center gap-3 w-56 p-3 bg-gradient-to-r from-[#fff5f5] to-[#ffecec] border border-orange-200 rounded-lg shadow-sm">
+    {/* Avatar */}
+    <div className="flex justify-center items-center w-10 h-10 rounded-full bg-orange-500 text-white font-semibold text-base">
+      {user.fullName ? user.fullName.charAt(0).toUpperCase() : "U"}
+    </div>
+
+    {/* User Info */}
+    <div className="leading-tight">
+      <h2 className="text-gray-800 font-medium text-sm">{user.fullName}</h2>
+      <p className="text-xs text-gray-600">
+        {user.plan ? user.plan.charAt(0).toUpperCase() + user.plan.slice(1) : "Free"}
+      </p>
+    </div>
+  </div>
 
         <div className="px-6 mt-5 text-sm text-gray-600 font-medium">
           {navItems.map(({ to, label, Icon }) => (

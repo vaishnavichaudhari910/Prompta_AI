@@ -110,7 +110,7 @@ text-sm rounded-lg cursor-pointer'>
             <h1 className="text-xl font-semibold">Generated Image</h1>
 
           </div>
-          {
+          {/* {
             !content ? (
               <div className="flex-1 flex justify-center items-center">
               <div className="text-sm flex flex-col items-center gap-5 text-gray-400">
@@ -123,8 +123,51 @@ text-sm rounded-lg cursor-pointer'>
                  <img src= {content} atl="image" className='w-full h-full'/>
               </div>
             )
-          }
+          } */}
           
+         {
+  !content ? (
+    <div className="flex-1 flex justify-center items-center">
+      <div className="text-sm flex flex-col items-center gap-5 text-gray-400">
+        <Image className="w-9 h-9 " />
+        <p>Enter a topic and click "Generate Image" to get started</p>
+      </div>
+    </div>
+  ) : (
+    <div className="mt-3 h-full flex flex-col items-center gap-4">
+      {/*  Show generated image */}
+      <img src={content} alt="image" className="w-full h-full rounded-md" />
+
+      {/*  Download button with Blob logic */}
+      <button
+        onClick={async () => {
+          try {
+            const response = await fetch(content); // take image 
+            const blob = await response.blob();    //add in blob and convert it
+            const url = window.URL.createObjectURL(blob);
+
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "generated-image.png"; // save file name
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // memory free कर
+            window.URL.revokeObjectURL(url);
+          } catch (error) {
+            console.error("Download failed:", error);
+          }
+        }}
+        className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm shadow"
+      >
+        Download Image
+      </button>
+    </div>
+  )
+}
+
+
       </div>
     </div>
   
