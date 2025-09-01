@@ -58,7 +58,7 @@ const Dashboard = () => {
   </div>
 </div>
 
-        
+     
              {/* Active plan Card */}
         {/* <div className="flex justify-between items-center w-72 p-4 px-6 bg-white rounded-xl border border-gray-200">
           <div className="text-slate-600">
