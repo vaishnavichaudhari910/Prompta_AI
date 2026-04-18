@@ -3,7 +3,6 @@ import { AiToolsData } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 import { motion } from "framer-motion";
-
 const AiTools = () => {
   const navigate = useNavigate();
   const { user } = useUser();
@@ -21,7 +20,6 @@ const fadeUp = {
   }),
 };
   return (
-
 
 <div className="px-4 sm:px-20 xl:px-32 my-24">
   <div className="text-center">

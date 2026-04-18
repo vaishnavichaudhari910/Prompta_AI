@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 const Plan = () => {
   return (
     <div className="max-w-2xl mx-auto z-20 my-30">
-      
       {/* Heading Fade Up */}
       <motion.div
         className="text-center"
@@ -30,8 +29,7 @@ const Plan = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
+        viewport={{ once: true }} >
         <PricingTable />
       </motion.div>
 
