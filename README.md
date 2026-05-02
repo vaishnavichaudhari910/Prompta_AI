@@ -11,7 +11,6 @@ An AI-powered full-stack web application that helps users generate content, imag
 * 📄 Resume Review System
 * 🔐 Authentication using Clerk
 * ⚡ Fast and responsive UI
-
 ---
 
 ## 🛠️ Tech Stack
