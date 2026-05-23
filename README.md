@@ -1,5 +1,4 @@
 # 🚀 Prompta AI
-
 An AI-powered full-stack web application that helps users generate content, images, and perform smart AI-based tasks efficiently.
 ---
 
