@@ -19,20 +19,17 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-center lg:text-left"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-            Create Amazing Content <br />
-            with{" "}
-            <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-              AI Tools
-            </span>
-          </h1>
+         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+  Create Smarter Content <br />
+  with{" "}
+  <span className="bg-gradient-to-r from-blue-500 to-blue-500 bg-clip-text text-transparent">
+    Prompta AI
+  </span>
+</h1>
 
-          <p className="mt-6 text-gray-600 text-lg max-w-xl">
-            Transform your content creation with our suite of premium AI
-            tools. Generate articles, blogs, images, remove backgrounds,
-            review resumes and boost productivity with AI.
-          </p>
-
+         <p className="mt-6 text-gray-600 text-lg max-w-xl">
+  Turn your ideas into high-quality content instantly. Generate articles, images, resumes, and more with the power of AI.
+</p>
           <div className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
             <button
               onClick={() => navigate("/ai")}
