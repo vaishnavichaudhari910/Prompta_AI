@@ -10,28 +10,8 @@ aiRouter.post('/generate-image',auth,generateImage)
 aiRouter.post('/remove-image-background',upload.single('image'), auth,removeImageBackground)
 aiRouter.post('/remove-image-object',upload.single('image'), auth,removeImageObject)
 aiRouter.post('/resume-review',upload.single('resume'), auth,resumeReview)
-// new 
-//aiRouter.post('/generate-presentation',auth, presentationMaker);
 
 
 export default aiRouter
 
 
-// // --------------------------
-
-
-
-// he je khali dilel aahe te run zal aahe pn youtube var jas var dil aahe tas aahe 
-// import express from 'express';
-// import { requireAuth } from '@clerk/express';
-// import { generateArticle, generateBlogTitle, generateImage } from '../controllers/aiController.js';
-
-// const router = express.Router();
-
-// router.post('/generate-article', requireAuth(), generateArticle);
-// router.post('/generate-blog-title',requireAuth(),generateBlogTitle)
-// router.post('/generate-image',requireAuth(),generateImage)
-// export default router;
-
-
-// checj gpt

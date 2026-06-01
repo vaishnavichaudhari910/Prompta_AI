@@ -32,7 +32,7 @@ app.get('/env-test', (req, res) => {
 /////////////////////////////
 
 
-app.use(requireAuth())  
+// app.use(requireAuth())  
 
 
 
