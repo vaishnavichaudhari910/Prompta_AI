@@ -17,8 +17,57 @@ const AI = new OpenAI({
   baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/",
 });
 
+// export const generateArticle = async (req, res) => {
+//   try {
+//     const { userId } = req.auth();
+//     const { prompt, length } = req.body;
+//     const plan = req.plan;
+//     const free_usage = req.free_usage;
+
+//     if (plan !== "premium" && free_usage >= 10) {
+//       return res.json({
+//         success: false,
+//         message: "Limit reached. upgrade to continue",
+//       });
+//     }
+//     const response = await AI.chat.completions.create({
+//       model: "gemini-2.5-flash",
+//       reasoning_effort: "low",
+//       messages: [
+//         {
+//           role: "user",
+//           content: prompt,
+//         },
+//       ],
+//       temperature: 0.7,
+
+//       max_tokens: length,
+//     });
+//     const content = response.choices[0].message.content;
+//     await sql`INSERT INTO creations (user_id,prompt,content,type) 
+//        VALUES (${userId},${prompt},${content},'article')`;
+
+//     if (plan !== "premium") {
+//       await clerkClient.users.updateUserMetadata(userId, {
+//         privateMetadata: {
+//           free_usage: free_usage + 1,
+//         },
+//       });
+//     }
+
+//     res.json({ success: true, content });
+//   } catch (error) {
+//     console.log(error.message);
+//     res.json({ success: false, message: error.message });
+//   }
+// };
+
 export const generateArticle = async (req, res) => {
   try {
+
+    console.log("Generate Article Hit");
+    console.log("Gemini Key Loaded:", !!process.env.GEMINI_API_KEY);
+
     const { userId } = req.auth();
     const { prompt, length } = req.body;
     const plan = req.plan;
@@ -30,6 +79,7 @@ export const generateArticle = async (req, res) => {
         message: "Limit reached. upgrade to continue",
       });
     }
+
     const response = await AI.chat.completions.create({
       model: "gemini-2.5-flash",
       reasoning_effort: "low",
@@ -40,28 +90,29 @@ export const generateArticle = async (req, res) => {
         },
       ],
       temperature: 0.7,
-
       max_tokens: length,
     });
+
     const content = response.choices[0].message.content;
-    await sql`INSERT INTO creations (user_id,prompt,content,type) 
+
+    await sql`INSERT INTO creations (user_id,prompt,content,type)
        VALUES (${userId},${prompt},${content},'article')`;
 
-    if (plan !== "premium") {
-      await clerkClient.users.updateUserMetadata(userId, {
-        privateMetadata: {
-          free_usage: free_usage + 1,
-        },
-      });
-    }
-
     res.json({ success: true, content });
+
   } catch (error) {
-    console.log(error.message);
-    res.json({ success: false, message: error.message });
+
+    console.error("FULL ERROR:", error);
+    console.error("ERROR MESSAGE:", error.message);
+    console.error("RESPONSE DATA:", error.response?.data);
+
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
-
+////for testing above generate artical ....
 export const generateBlogTitle = async (req, res) => {
   try {
     const { userId } = req.auth();
@@ -107,70 +158,6 @@ export const generateBlogTitle = async (req, res) => {
   }
 };
 
-
-// export const generateBlogTitle = async (req, res) => {
-//   try {
-//     const { userId } = req.auth();
-//     const { prompt } = req.body;
-//     const plan = req.plan;
-//     const free_usage = req.free_usage;
-
-//     // Check usage limit for free users
-//     if (plan !== "premium" && free_usage >= 10) {
-//       return res.json({
-//         success: false,
-//         message: "Limit reached. Upgrade to continue",
-//       });
-//     }
-
-//     // Call Gemini API
-//     const response = await AI.chat.completions.create({
-//       model: "gemini-2.5-flash",
-//       reasoning_effort: "low",
-//       messages: [
-//         {
-//           role: "user",
-//           content: prompt,
-//         },
-//       ],
-//       temperature: 0.7,
-//       max_tokens: 100,
-//     });
-
-//     // ✅ Safely extract content from Gemini response
-//     const content = response?.choices?.[0]?.message?.content?.trim();
-
-//     // ❌ If content is missing, handle it gracefully
-//     if (!content) {
-//       return res.status(500).json({
-//         success: false,
-//         message: "AI failed to generate a title. Please try again.",
-//       });
-//     }
-
-//     // ✅ Save to database
-//     await sql`
-//       INSERT INTO creations (user_id, prompt, content, type)
-//       VALUES (${userId}, ${prompt}, ${content}, 'blog-title')
-//     `;
-
-//     // Update usage for free users
-//     if (plan !== "premium") {
-//       await clerkClient.users.updateUserMetadata(userId, {
-//         privateMetadata: {
-//           free_usage: free_usage + 1,
-//         },
-//       });
-//     }
-
-//     // Send success response
-//     res.json({ success: true, content });
-    
-//   } catch (error) {
-//     console.log("Blog Title Generation Error:", error.message);
-//     res.status(500).json({ success: false, message: error.message });
-//   }
-// };
 
 export const generateImage = async (req, res) => {
   try {
