@@ -18,21 +18,7 @@ app.use(clerkMiddleware());
  
 app.get('/', (req, res) => res.send('Server is Live!'));
 
-// new add only check for second versal
-
-app.get('/env-test', (req, res) => {
-  res.json({
-    gemini: !!process.env.GEMINI_API_KEY,
-    clerk: !!process.env.CLERK_SECRET_KEY,
-    db: !!process.env.DATABASE_URL,
-    clipdrop: !!process.env.CLIPDROP_API_KEY,
-    cloudinary: !!process.env.CLOUDINARY_CLOUD_NAME
-  });
-});
-/////////////////////////////
-
-
-// app.use(requireAuth())  
+app.use(requireAuth())  
 
 
 
