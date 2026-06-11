@@ -48,7 +48,7 @@ Prompta_AI/
 
 ## 🌐 Live Demo
 
-👉https://prompta-ai.vercel.app/
+👉https://prompta-ai-eight.vercel.app/
 
 ---
 
