@@ -3,6 +3,7 @@ import { AiToolsData } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 const AiTools = () => {
   const navigate = useNavigate();
   const { user } = useUser();
@@ -23,6 +24,17 @@ const fadeUp = {
 
 <div className="px-4 sm:px-20 xl:px-32 my-24">
   <div className="text-center">
+    <motion.div
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 shadow-sm"
+>
+  <Sparkles className="w-4 h-4 text-indigo-600" />
+  <span className="text-sm font-medium bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+    AI-Powered Excellence
+  </span>
+</motion.div>
     <h2 className="text-[42px] font-semibold bg-gradient-to-r from-[#0f172a] to-[#3b82f6] bg-clip-text text-transparent">
   Powerful AI Tools
 </h2>
