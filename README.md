@@ -48,13 +48,14 @@ Prompta_AI/
 
 ## 🌐 Live Demo
 
-👉https://prompta-ai.vercel.app/
+👉https://prompta-ai-eight.vercel.app/
 
 ---
 
 ## 📸 Screenshots
 
-<img width="1897" height="866" alt="image" src="https://github.com/user-attachments/assets/9f006dc6-399a-433c-a147-fafaa885a18a" />
+<img width="1896" height="860" alt="image" src="https://github.com/user-attachments/assets/5266973f-26cf-46db-950c-eb863cc72073" />
+
 👉Features
 <img width="1889" height="870" alt="image" src="https://github.com/user-attachments/assets/69372c7d-d0f7-4f45-b318-d7c8777fe8af" />
 👉Generate Article
