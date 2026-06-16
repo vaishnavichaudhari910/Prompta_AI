@@ -35,14 +35,16 @@ const fadeUp = {
     AI-Powered Excellence
   </span>
 </motion.div>
-    <h2 className="text-[42px] font-semibold bg-gradient-to-r from-[#0f172a] to-[#3b82f6] bg-clip-text text-transparent">
-  Powerful AI Tools
+   <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
+  Transform Ideas with{" "}
+  <span className="bg-gradient-to-r from-violet-600 via-indigo-500 to-blue-500 bg-clip-text text-transparent">
+    AI
+  </span>
 </h2>
 
-    <p className="text-gray-500 max-w-lg mx-auto">
-      Everything you need to create, enhance, and optimize your content with
-      cutting-edge AI technology
-    </p>
+     <p className="mt-5 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+    Create smarter, build faster, and transform your ideas with AI
+  </p>
   </div>
 
 {/* Cards Grid */}
