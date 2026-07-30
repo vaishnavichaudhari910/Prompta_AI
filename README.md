@@ -5,6 +5,7 @@ An AI-powered full-stack SaaS web application that helps users generate content,
 🌐 **Live Demo:** https://prompta-ai-eight.vercel.app/
 
 ---
+<img width="1891" height="863" alt="image" src="https://github.com/user-attachments/assets/c893e71b-88c3-4f69-ad4d-afa807472c50" />
 
 ## 🌟 Features
 
@@ -20,18 +21,24 @@ Upload any image and let AI automatically detect and remove the background — p
 <img width="1893" height="866" alt="image" src="https://github.com/user-attachments/assets/01adf5e4-1f82-4b73-a2bf-a98a84823c11" />
 ### 🪄 AI Object Removal
 Upload an image, describe an unwanted object in it, and the AI intelligently erases that object from the picture using Cloudinary's generative-remove effect — no manual editing required.
+<img width="1917" height="876" alt="image" src="https://github.com/user-attachments/assets/db75063a-2a6f-444f-8bb7-6ee8da07a596" />
 
 ### 📄 AI Resume Reviewer
 Upload a resume in PDF format and receive instant, constructive AI feedback covering strengths, weaknesses, and specific areas for improvement — helpful for job seekers polishing their applications.
+<img width="1917" height="868" alt="image" src="https://github.com/user-attachments/assets/d97a7bd1-5f17-437a-8432-e53bbdbcd02b" />
 
 ### 🌍 Community Feed
 Browse a public gallery of AI-generated images shared by other users. Like or unlike any published creation, encouraging engagement and inspiration across the user base.
+<img width="1900" height="867" alt="image" src="https://github.com/user-attachments/assets/192a6e4a-bfe9-4646-9de3-29d96cd5d281" />
+
 
 ### 📊 Personal Dashboard
 A private dashboard showing a user's full creation history (articles, blog titles, images, resume reviews) along with their current plan status and usage stats.
+<img width="1897" height="852" alt="image" src="https://github.com/user-attachments/assets/2d3426af-e173-4496-85ac-6f8da3bc3cc9" />
 
 ### 🔐 Secure Authentication & Account Management
 Full sign-up/sign-in flow handled by Clerk, including session management — no custom auth code needed, keeping user credentials secure and the login experience polished.
+<img width="1917" height="871" alt="image" src="https://github.com/user-attachments/assets/c46e58b7-9b10-469d-b45b-18f675710ea7" />
 
 ### 💳 Free & Premium Subscription Plans
 - **Free Plan:** Limited to 10 total AI generations (articles, blog titles, etc.), tracked automatically per user.
