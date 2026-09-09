@@ -1,7 +1,6 @@
 # 🚀 Prompta AI
 
 An AI-powered full-stack SaaS web application that helps users generate content, create and edit images, and perform smart AI-based tasks — all from one dashboard, with a free tier and a premium subscription plan.
-
 🌐 **Live Demo:** https://prompta-ai-eight.vercel.app/
 ---
 <img width="1891" height="863" alt="image" src="https://github.com/user-attachments/assets/c893e71b-88c3-4f69-ad4d-afa807472c50" />
